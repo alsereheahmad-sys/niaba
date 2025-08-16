@@ -181,3 +181,16 @@
 
 </body>
 </html>
+<!-- الشريط المتحرك -->
+<div style="background-color:#007bff; color:white; padding:10px 0; overflow:hidden; position:relative; font-size:18px; font-weight:bold;">
+    <span style="display:inline-block; white-space:nowrap; position:absolute; animation:marquee 15s linear infinite;">
+        مرحبا بكم في نيابة غرب الأمانة ،، مسار التحول الرقمي ،، سنجعل التكنولوجيا كما تريد
+    </span>
+</div>
+
+<style>
+@keyframes marquee {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+</style>
