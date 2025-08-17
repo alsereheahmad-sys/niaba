@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <title>النيابة العامة - نيابة إستئناف شمال الأمانة</title>
 <style>
+/* الخط العربي العصري */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap');
+
 /* الخطوط الأساسية */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
     margin:0;
     background:#f0f4fa;
 }
@@ -15,7 +18,7 @@ body {
 header {
     background: linear-gradient(135deg,#003366,#0055aa);
     color:#fff;
-    padding:20px;
+    padding:30px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -50,6 +53,7 @@ header .logo {
     font-size:1.3em;
     margin:3px 0;
     font-weight:500;
+    color:#fff; /* اجعل النص أبيض */
 }
 
 .header-text h3 {
