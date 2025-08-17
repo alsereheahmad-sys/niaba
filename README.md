@@ -4,31 +4,115 @@
 <meta charset="UTF-8">
 <title>النيابة العامة - نيابة إستئناف شمال الأمانة</title>
 <style>
+/* الخطوط الأساسية */
 body {
-    font-family: Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin:0;
     background:#f0f4fa;
 }
+
+/* رأس الصفحة ثابت */
 header {
-    background: linear-gradient(90deg,#003366,#0055aa);
+    background: linear-gradient(135deg,#003366,#0055aa);
     color:#fff;
-    padding:50px 15px 15px 15px;
-    text-align:center;
-    position: relative;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100vw;
+    box-sizing:border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
 }
-header img {
-    position: absolute;
-    top:10px;
-    left:10px;
+
+.header-container {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    text-align:center;
+    flex-wrap: wrap;
+}
+
+header .logo {
     width:80px;
     opacity:0.3;
 }
-marquee {
-    background:#0077cc;
-    color:#fff;
-    padding:8px;
+
+.header-text h1 {
+    font-size:1.8em;
+    margin:0;
     font-weight:bold;
 }
+
+.header-text h2 {
+    font-size:1.3em;
+    margin:3px 0;
+    font-weight:500;
+}
+
+.header-text h3 {
+    font-size:1.1em;
+    margin:3px 0;
+    font-weight:400;
+}
+
+.header-text .address {
+    font-size:0.95em;
+    margin-top:5px;
+    font-weight:300;
+    opacity:0.8;
+}
+
+/* أيقونات التواصل السريعة */
+.quick-links {
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+.quick-links a {
+    display:block;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#fff;
+    text-align:center;
+    line-height:40px;
+    font-size:20px;
+    color:#003366;
+    text-decoration:none;
+    transition: all 0.3s;
+}
+.quick-links a:hover {
+    background:#0077cc;
+    color:#fff;
+}
+
+/* شريط الترحيب */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background:#0077cc;
+  color:#fff;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+  font-weight:bold;
+  font-size:1em;
+  padding:10px 0;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* الأقسام */
 .section {
     background:#fff;
     margin:20px;
@@ -36,6 +120,7 @@ marquee {
     border-radius:12px;
     box-shadow:0 4px 6px rgba(0,0,0,0.1);
 }
+
 h2 {color:#003366;}
 .field {margin-bottom:15px;}
 label {display:block;margin-bottom:5px;color:#003366;font-weight:bold;}
@@ -55,7 +140,8 @@ button {
     font-weight:bold;
 }
 button:hover {background: linear-gradient(90deg,#0055aa,#0099ff);}
-.links {display:flex;justify-content:space-around;margin:15px 0;}
+
+.links {display:flex;justify-content:space-around;margin:15px 0;flex-wrap:wrap;}
 .links a {
     display:block;
     background:#0055aa;
@@ -66,11 +152,16 @@ button:hover {background: linear-gradient(90deg,#0055aa,#0099ff);}
     width:40%;
     text-align:center;
     font-weight:bold;
+    margin:5px 0;
 }
 .links a:hover {background:#003366;}
+
 .barcode{text-align:center;margin-top:20px;}
-.barcode img{width:120px;height:120px;}
+.barcode img{max-width:100%; height:auto;}
+
 #savedMsg{color:green;font-weight:bold;margin-top:10px;}
+
+/* الفوتر */
 footer {
     background:#003366;
     color:white;
@@ -79,18 +170,41 @@ footer {
     font-size:14px;
 }
 footer p{margin:5px;}
+
+/* Responsive */
+@media (max-width:600px){
+  .header-text h1 {font-size:1.5em;}
+  .header-text h2 {font-size:1.2em;}
+  .header-text h3 {font-size:1em;}
+  .header-text .address {font-size:0.9em;}
+  .links a {width:80%;}
+  .quick-links {justify-content:center;}
+}
 </style>
+<!-- أيقونات فونت ممتازة -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <header>
-<img src="https://i.imgur.com/3X9MsdY.png" alt="شعار النيابة">
-<h1>النيابة العامة</h1>
-<h3>نيابة إستئناف شمال الأمانة</h3>
-<h4>نيابة غرب الأمانة الإبتدائية</h4>
+  <div class="header-container">
+    <img src="https://i.imgur.com/3X9MsdY.png" alt="شعار النيابة" class="logo">
+    <div class="header-text">
+      <h1>النيابة العامة</h1>
+      <h2>نيابة إستئناف شمال الأمانة</h2>
+      <h3>نيابة غرب الأمانة الإبتدائية</h3>
+      <p class="address">العنوان: صنعاء - شارع الحرية</p>
+    </div>
+  </div>
+  <div class="quick-links">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://wa.me/967778940199" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
 </header>
 
-<marquee>مرحبا بكم في موقع نيابة غرب الأمانة الإبتدائية</marquee>
+<div class="marquee">
+  <p>مرحبا بكم في موقع نيابة غرب الأمانة الإبتدائية</p>
+</div>
 
 <div class="section">
 <h2>التواصل</h2>
@@ -115,7 +229,7 @@ footer p{margin:5px;}
 <form id="complaintForm">
     <div class="field">
         <label>الاسم:</label>
-        <input type="text" id="name" required>
+        <input type="text" id="name" placeholder="ادخل الاسم الكامل" required>
     </div>
     <div class="field">
         <label>الصفة:</label>
@@ -126,19 +240,19 @@ footer p{margin:5px;}
     </div>
     <div class="field">
         <label>رقم الهاتف:</label>
-        <input type="tel" id="phone" required>
+        <input type="tel" id="phone" placeholder="ادخل رقم الهاتف" required>
     </div>
     <div class="field">
         <label>السنة الهجرية:</label>
-        <input type="text" id="year" required>
+        <input type="text" id="year" placeholder="ادخل السنة الهجرية" required>
     </div>
     <div class="field">
         <label>موضوع الشكوى:</label>
-        <textarea id="subject" rows="4" required></textarea>
+        <textarea id="subject" rows="4" placeholder="اكتب موضوع الشكوى" required></textarea>
     </div>
     <div class="field">
         <label>البريد الإلكتروني:</label>
-        <input type="email" id="email" required>
+        <input type="email" id="email" placeholder="ادخل البريد الإلكتروني" required>
     </div>
     <button type="submit">إرسال للبريد وحفظ</button>
 </form>
@@ -165,6 +279,7 @@ footer p{margin:5px;}
 
 <footer>
 <p>جميع الحقوق محفوظة &copy; نيابة غرب الأمانة الإبتدائية</p>
+<p>تصميم وتنفيذ وإخراج م. أحمد السريحي</p>
 </footer>
 
 <script>
